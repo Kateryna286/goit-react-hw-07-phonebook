@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import * as actions from '../Redux/contacts/contacts-actions';
+//import * as actions from '../Redux/contacts/contacts-actions';
+import * as operations from '../Redux/contacts/contacts-operations';
 import { getItems } from '../Redux/contacts/contacts-selector';
 
 export default function Form() {
@@ -34,7 +35,7 @@ export default function Form() {
       return;
     }
 
-    dispatch(actions.addContact({ name, number }));
+    dispatch(operations.addContact({ name, number }));
 
     resetForm();
   };
