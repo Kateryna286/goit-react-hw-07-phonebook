@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { contactsSelectors, contactsOperations } from '../Redux/contacts';
+import { contactsSelectors, contactsOperations } from 'Redux/contacts';
 import './ContactList.css';
 
 export default function ContactsList() {

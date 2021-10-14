@@ -14,11 +14,6 @@ import {
   getError,
 } from './contacts-actions';
 
-// const error = createReducer(null, {
-//   [actions.fetchContactsError]: (_, action) => action.payload,
-//   [actions.fetchContactsRequest]: () => null,
-// });
-
 const items = createReducer([], {
   [getContactsSuccess]: (_, { payload }) => payload,
   [addContactsSuccess]: (state, { payload }) => [...state, payload],
@@ -44,6 +39,7 @@ const loading = createReducer(false, {
 
 const error = createReducer(null, {
   [getError]: (_, { payload }) => payload,
+  [getContactsRequest]: () => null,
 });
 
 export default combineReducers({
