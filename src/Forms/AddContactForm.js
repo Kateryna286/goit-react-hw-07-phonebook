@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-//import * as actions from '../Redux/contacts/contacts-actions';
 import * as operations from '../Redux/contacts/contacts-operations';
 import { getItems } from '../Redux/contacts/contacts-selector';
 

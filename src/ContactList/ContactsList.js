@@ -6,7 +6,6 @@ import { contactsSelectors, contactsOperations } from '../Redux/contacts';
 import './ContactList.css';
 
 export default function ContactsList() {
-  //const contacts = useSelector(contactsSelectors.getItems);
   const contacts = useSelector(contactsSelectors.getVisibleContacts);
   const dispatch = useDispatch();
 
