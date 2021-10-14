@@ -11,7 +11,6 @@ import {
   deleteContactsSuccess,
   deleteContactsError,
   updateFilter,
-  getError,
 } from './contacts-actions';
 
 const items = createReducer([], {
@@ -38,7 +37,7 @@ const loading = createReducer(false, {
 });
 
 const error = createReducer(null, {
-  [getError]: (_, { payload }) => payload,
+  [getContactsError]: (_, { payload }) => payload.message,
   [getContactsRequest]: () => null,
 });
 
