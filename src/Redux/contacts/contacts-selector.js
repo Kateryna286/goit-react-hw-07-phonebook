@@ -4,17 +4,9 @@ export const getItems = state => state.contacts.items;
 
 export const getFilter = state => state.contacts.filter;
 
-// export const getVisibleContactsOld = state => {
-//   const contacts = getItems(state);
-//   const filter = getFilter(state);
+export const isLoading = state => state.contacts.loading;
 
-//   const normalizedFilter = filter.toLowerCase();
-
-//   return contacts.filter(({ name }) =>
-//     name.toLowerCase().includes(normalizedFilter),
-//   );
-// };
-
+//мемоизированный селектор
 export const getVisibleContacts = createSelector(
   [getItems, getFilter],
   (contacts, filter) => {

@@ -26,21 +26,26 @@ export const getContacts = () => async dispatch => {
 
 export const addContact =
   ({ name, number }) =>
-  dispatch => {
+  async dispatch => {
     const contact = { name, number };
 
     dispatch(addContactsRequest());
 
-    axios
-      .post('/contacts', contact)
-      .then(({ data }) => dispatch(addContactsSuccess(data)))
-      .catch(error => dispatch(addContactsError(error)));
+    try {
+      const { data } = await axios.post('/contacts', contact);
+      dispatch(addContactsSuccess(data));
+    } catch (error) {
+      dispatch(addContactsError(error));
+    }
   };
 
-export const deleteContact = contactId => dispatch => {
+export const deleteContact = contactId => async dispatch => {
   dispatch(deleteContactsRequest());
-  axios
-    .delete(`/contacts/${contactId}`)
-    .then(() => dispatch(deleteContactsSuccess(contactId)))
-    .catch(error => dispatch(deleteContactsError(error)));
+
+  try {
+    await axios.delete(`/contacts/${contactId}`);
+    dispatch(deleteContactsSuccess(contactId));
+  } catch (error) {
+    dispatch(deleteContactsError(error));
+  }
 };

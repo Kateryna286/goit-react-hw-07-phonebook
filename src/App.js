@@ -10,7 +10,6 @@ function App() {
       <div className="formsContainer">
         <Form />
       </div>
-
       <div className="contactsContainer">
         <div className="contacts">
           <h2>Contacts</h2>

@@ -37,8 +37,13 @@ const loading = createReducer(false, {
 });
 
 const error = createReducer(null, {
+  [addContactsError]: (_, { payload }) => payload.message,
   [getContactsError]: (_, { payload }) => payload.message,
+  [deleteContactsError]: (_, { payload }) => payload.message,
   [getContactsRequest]: () => null,
+  [addContactsRequest]: () => null,
+  [deleteContactsRequest]: () => null,
+  [updateFilter]: () => null,
 });
 
 export default combineReducers({
